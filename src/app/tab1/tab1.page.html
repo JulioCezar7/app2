@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="conteudo" *ngIf="!isAuthenticated">
+    <img class="img-item" src="https://img.myloview.com.br/quadros/novo-conceito-de-trabalho-homem-abre-a-porta-a-procura-de-trabalho-bem-vindo-empregado-empresario-bem-sucedido-de-terno-com-maleta-inicio-da-carreira-de-negocios-desenho-isometrico-de-vetor-isol-700-117060759.jpg" alt="Logo do app">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-button expand="block" (click)="onLogin()" style="--background: #15cfcfee; --color: #ffffff;">
+      Login
+    </ion-button>
+    <br>
+    <ion-button expand="block" (click)="cadastro()" style="--background: #15cfcfee; --color: #ffffff;">Cadastro</ion-button>
+  </div>
+  
+  
+
+  <div *ngIf="isAuthenticated">
+    <h2>Bem-vindo(a)!</h2>
+    <p>Você está logado como: {{ email }}</p>
+  </div>
+</ion-content>

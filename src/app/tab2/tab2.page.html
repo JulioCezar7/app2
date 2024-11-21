@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="titulo">
+      Marido de Aluguel
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="conteudo">
+    <img class="img-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgARrd6BcZ8PLIQbESJpBQ_PnKo4gdJCNwBA&s" 
+    alt="Imagem de Solidaridade" />
+    <p>
+      Selecione a opção abaixo, para ser mandado para a página que deseja.
+    </p>
+
+    <ion-card [routerLink]="['/tabs/tab3']">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMkAiir0QbqS5EG_c6NWIZ0xC7odko--YVPQ&s" />
+        </ion-thumbnail>
+        <ion-label>Servidor</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card [routerLink]="['/tabs/tab4']">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="https://coodesh.com/blog/wp-content/uploads/2021/06/empreendedorismo-digital-1-1152x648.jpg" />
+        </ion-thumbnail>
+        <ion-label>Empregador</ion-label>
+      </ion-item>
+    </ion-card>
+
+  </div>
+
+</ion-content>

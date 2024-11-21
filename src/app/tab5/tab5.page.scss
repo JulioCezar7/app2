@@ -1,0 +1,13 @@
+
+/* Estilos para remover a linha dos radio buttons */
+ion-item.radio-item {
+    --border-color: transparent; /* Remove a cor da borda */
+    border-bottom: none;         /* Remove a borda inferior */
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-left: 15px;
+  }
+  

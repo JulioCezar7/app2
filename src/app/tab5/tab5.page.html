@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" formControlName="nome"></ion-input>
+      </ion-item>
+      <div *ngIf="cadastroForm.get('nome')?.invalid && cadastroForm.get('nome')?.touched" class="error-message">
+        Nome é obrigatório e deve ter no mínimo 3 caracteres.
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div *ngIf="cadastroForm.get('email')?.invalid && cadastroForm.get('email')?.touched" class="error-message">
+        Insira um e-mail válido.
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+      </ion-item>
+      <div *ngIf="cadastroForm.get('senha')?.invalid && cadastroForm.get('senha')?.touched" class="error-message">
+        A senha é obrigatória e deve ter no mínimo 6 caracteres.
+      </div>
+
+      <!-- Campo de seleção entre Paciente e Servidor -->
+      <ion-item class="radio-item">
+        <ion-label>Tipo de Usuário</ion-label>
+      </ion-item>
+      <ion-radio-group formControlName="tipoUsuario">
+        <ion-item class="radio-item">
+          <ion-label>Servidor</ion-label>
+          <ion-radio slot="start" value="paciente"></ion-radio>
+        </ion-item>
+
+        <ion-item class="radio-item">
+          <ion-radio slot="start" value="servidor"></ion-radio>
+          <ion-label>Empregador</ion-label>
+        </ion-item>
+      </ion-radio-group>
+      <div *ngIf="cadastroForm.get('tipoUsuario')?.invalid && cadastroForm.get('tipoUsuario')?.touched" class="error-message">
+        Selecione o tipo de usuário.
+      </div>
+
+    </ion-list>
+
+    <ion-button expand="block" type="submit" [disabled]="!cadastroForm.valid">Cadastrar</ion-button>
+  </form><br>
+  <ion-button expand="block" (click)="cadastro()">Tenho Login</ion-button>
+</ion-content>
